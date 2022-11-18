@@ -1,0 +1,19 @@
+.toDo {
+	display: flex;
+	justify-content: space-between;
+}
+.toDo_table-input {
+	padding: 8px;
+}
+.toDo_table-remove {
+	color: red;
+	cursor: pointer;
+	transition: 0.3s all;
+	transform: scaleY(0.6);
+	padding: 0 4px;
+	border-radius: 3px;
+}
+.toDo_table-remove:hover {
+	color: #fff;
+	background: red;
+}
