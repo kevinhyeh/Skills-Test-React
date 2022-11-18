@@ -1,8 +1,12 @@
 import React from 'react';
+import { useDispatch } from 'react-redux'
+import { add } from '../features/ToDo/toDoSlice'
 import { Formik, Field, Form } from 'formik';
 import { Button } from '@mui/material';
 
 const BasicForm = (props) => {
+	const dispatch = useDispatch()
+
 	return (
 		<div>
 			<h1>Add To Do</h1>
@@ -11,7 +15,8 @@ const BasicForm = (props) => {
 					addToDo: ''
 				}}
 				onSubmit={(values) => {
-					props.addItem(values.addToDo)
+					// props.addItem(values.addToDo)
+					dispatch(add(values.addToDo))
 				}}
 			>
 				<Form>

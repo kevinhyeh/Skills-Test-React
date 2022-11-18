@@ -6,12 +6,12 @@ export const toDoSlice = createSlice({
     value: [],
   },
   reducers: {
-    add: (state, payload) => {
-      state.value = [...state, payload]
+    add: (state, action) => {
+      state.value = [...state.value, action.payload]
     },
-		remove: (state, payload) => {
-			// let filteredItems = state.filter((toDo, index) => toDo !== payload)
-			// setToDoItems([...filteredItems])
+		remove: (state, action) => {
+			let filteredItems = state.value.filter((toDo, index) => toDo !== action.payload)
+			state.value = filteredItems
 		}
   },
 })
